@@ -1,0 +1,55 @@
+<div class="content">
+  <div class="container">
+
+    <div>
+      <p class="tui-text_h4">Профиль</p>
+      <div class="component-input">
+        <p class="tui-text_h6">Почта</p>
+
+        <!--Input email-->
+        <tui-input
+          formControlName="email"
+          [tuiTextfieldCleaner]="true"
+        >
+          e-mail
+          <span class="tui-required"></span>
+          <input
+            autocomplete="email"
+            placeholder="mail@mail.ru"
+            tuiTextfield
+            type="email"
+          >
+        </tui-input>
+      </div>
+    </div>
+
+    <div>
+      <div class="component-input">
+        <p class="tui-text_h6">Пароль</p>
+
+        <!--Input password-->
+        <tui-input-password
+          formControlName="password"
+          tuiHintAppearance="onDark"
+          tuiHintContent
+          tuiHintDirection="right"
+        >
+          password
+          <span class="tui-required"></span>
+        </tui-input-password>
+      </div>
+
+      <div class="component-button">
+        <button
+          tuiButton
+          size="m"
+          appearance="accent"
+        >
+          Сохранить
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

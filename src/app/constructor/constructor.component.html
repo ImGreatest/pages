@@ -1,0 +1,23 @@
+<tui-block-status *ngIf="size$ | async as size">
+
+  <h4>Something has been achieved</h4>
+
+  <span>
+        You can do something with it, or you can not do it. And the description text can be quite long.
+    </span>
+
+  <button
+    appearance="secondary"
+    tuiButton
+    [size]="size"
+  >
+    Do
+  </button>
+  <button
+    appearance="mono"
+    tuiButton
+    [size]="size"
+  >
+    Not to do
+  </button>
+</tui-block-status>

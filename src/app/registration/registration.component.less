@@ -1,0 +1,56 @@
+
+@height-container_value: auto;
+@width-container_value: 33%;
+@size_input_value: 80%;
+@margin_value: 2rem;
+@padding_input_value: calc(100% - @size_input_value - 10%);
+
+.centre-elem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  height: @height-container_value;
+}
+
+.content {
+  .centre-elem();
+  width: auto;
+  height: auto;
+}
+
+.tui-text_h4 {
+  .centre-elem()
+}
+
+.component-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container-inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.input {
+  margin-bottom: @margin_value;
+  width: 100%;
+}
+
+.component-button {
+  .centre-elem();
+  margin-top: @margin_value;
+}

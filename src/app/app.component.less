@@ -1,0 +1,119 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.less';
+
+@width-screen: 100%;
+@height-screen: 100%;
+
+@bg-main: var(--tui-neutral-fill);
+
+@toolbar-bg: var(--tui-error-fill);
+@border-radius-toolbar: 0.5rem;
+@padding-toolbar_value: 0.625rem;
+@padding-toolbar: calc(@padding-toolbar_value / 2);
+@box-shadow-toolbar: var(--tui-shadow-dropdown);
+@margin-button-block-toolbar: 2rem;
+
+:host {
+  --bright-blue: oklch(51.01% 0.274 263.83);
+  --electric-violet: oklch(53.18% 0.28 296.97);
+  --french-violet: oklch(47.66% 0.246 305.88);
+  --vivid-pink: oklch(69.02% 0.277 332.77);
+  --hot-red: oklch(61.42% 0.238 15.34);
+  --orange-red: oklch(63.32% 0.24 31.68);
+
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
+
+  --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+    180deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--electric-violet) 100%
+  );
+
+  --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+    90deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--electric-violet) 100%
+  );
+
+  --pill-accent: var(--bright-blue);
+
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.angular-logo {
+  max-width: 9.2rem;
+}
+
+.main {
+  width: @width-screen;
+  min-height: @height-screen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: inherit;
+  position: relative;
+  @media screen and (max-resolution: 928dpi) {
+    width: @width-screen - 3dpi;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  width: @width-screen;
+  max-width: 700px;
+  margin-bottom: 3rem;
+}
+
+.toolbar {
+  width: @width-screen;
+}
+
+.primary {
+  background-color: var(--tui-link-hover);
+  box-shadow: @box-shadow-toolbar;
+  padding: @padding-toolbar;
+  border-radius: @border-radius-toolbar;
+}
+
+.dark {
+  //width: @width-screen;
+  box-shadow: @box-shadow-toolbar;
+  padding: @padding-toolbar;
+  background: @toolbar-bg;
+  border-radius: @border-radius-toolbar;
+}
+
+.wrapper {
+  .inset-border(bottom, light);
+  display: flex;
+  align-items: center;
+  padding: 2rem 2rem 0;
+}
+
+.acc-avatar {
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.bg-content {
+  background-color: @bg-main;
+}
+
+.button-block-toolbar {
+  margin-left: auto;
+}
+
+.text-toolbar {
+  color: blue
+}
+

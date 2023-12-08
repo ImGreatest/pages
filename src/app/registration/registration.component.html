@@ -1,0 +1,69 @@
+<div class="content">
+  <div class="container">
+
+    <div>
+      <div class="component-form">
+        <p class="tui-text_h4" >Регистрация</p>
+        <div class="container-inputs">
+
+          <!--Input email-->
+          <tui-input
+            formControlName="email"
+            [tuiTextfieldCleaner]="true"
+            class="input"
+          >
+            e-mail
+            <span class="tui-required"></span>
+            <input
+              autocomplete="email"
+              placeholder="mail@mail.ru"
+              tuiTextfield
+              type="email"
+            >
+          </tui-input>
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div>-->
+<!--        <div>-->
+
+          <!--Input password-->
+          <tui-input-password
+            formControlName="passwordValue"
+            tuiHintAppearance="onDark"
+            tuiHintContent
+            tuiHintDirection="right"
+            class="input"
+          >
+            Password
+            <span class="tui-required"></span>
+          </tui-input-password>
+
+          <!--Retry password-->
+
+            <tui-input-password
+              formControlName="passwordValueRetry"
+              tuiHintAppearance="onDark"
+              tuiHintContent
+              tuiHintDirection="right"
+              class="input"
+            >
+              Retry Password
+              <span class="tui-required"></span>
+            </tui-input-password>
+
+            <button
+              tuiButton
+              size="m"
+              appearance="accent"
+            >
+              Войти
+            </button>
+        </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+

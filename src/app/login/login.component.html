@@ -1,0 +1,52 @@
+<div class="content">
+  <div class="container">
+
+    <div>
+      <p class="tui-text_h4">Авторизация</p>
+      <div>
+
+        <!--Input email-->
+        <tui-input
+          formControlName="email"
+          [tuiTextfieldCleaner]="true"
+        >
+          e-mail
+          <span class="tui-required"></span>
+          <input
+            autocomplete="email"
+            placeholder="mail@mail.ru"
+            tuiTextfield
+            type="email"
+          >
+        </tui-input>
+      </div>
+    </div>
+
+    <div>
+      <div>
+
+        <!--Input password-->
+        <tui-input-password
+          formControlName="passwordValue"
+          tuiHintAppearance="onDark"
+          tuiHintContent
+          tuiHintDirection="right"
+        >
+          Password
+          <span class="tui-required"></span>
+        </tui-input-password>
+
+        <div class="component-button">
+          <button
+            tuiButton
+            size="m"
+            appearance="accent"
+          >
+            Войти
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

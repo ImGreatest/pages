@@ -1,0 +1,44 @@
+
+@height-container_value: auto;
+@width-container_value: 33%;
+@size_input_value: 80%;
+@off-set-component: 2rem;
+@padding_input_value: calc(100% - @size_input_value - 10%);
+
+.centre-elem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: @width-container_value;
+  height: @height-container_value;
+}
+
+.content {
+  .centre-elem();
+}
+
+.tui-text_h4 {
+  .centre-elem()
+}
+
+.component-button {
+  .centre-elem();
+  margin-top: @off-set-component;
+}
+
+tui-input {
+  padding-left: @padding_input_value;
+  width: @size_input_value;
+}
+
+tui-input-password {
+  padding-top: @off-set-component;
+  padding-left: @padding_input_value;
+  width: @size_input_value;
+}

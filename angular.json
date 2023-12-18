@@ -43,9 +43,12 @@
               "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
               "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
               "node_modules/@taiga-ui/styles/taiga-ui-global.less",
-              "src/styles.less"
+              "src/styles.less",
+              "node_modules/grapesjs/dist/css/grapes.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/grapesjs/dist/grapes.min.js"
+            ]
           },
           "configurations": {
             "production": {

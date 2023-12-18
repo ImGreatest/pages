@@ -16,9 +16,11 @@
     "@angular/compiler": "^17.0.0",
     "@angular/core": "^17.0.0",
     "@angular/forms": "^17.0.0",
+    "@angular/material": "^17.0.4",
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "@nestjs/serve-static": "^4.0.0",
     "@taiga-ui/addon-charts": "^3.57.0",
     "@taiga-ui/addon-commerce": "^3.57.0",
     "@taiga-ui/addon-doc": "^3.57.0",
@@ -34,8 +36,11 @@
     "@taiga-ui/styles": "^3.57.0",
     "@tinkoff/ng-dompurify": "3.0.0",
     "dompurify": "2.2.9",
+    "grapesjs": "^0.21.7",
     "rxjs": "~7.8.0",
+    "supertest": "^6.3.3",
     "tslib": "^2.3.0",
+    "xlsx": "^0.18.5",
     "zone.js": "~0.14.2"
   },
   "devDependencies": {

@@ -3,6 +3,7 @@ import {TuiButtonModule} from "@taiga-ui/core";
 import {TuiBlockStatusModule} from "@taiga-ui/layout";
 import {AsyncPipe} from "@angular/common";
 import grapesjs, {PanelsConfig} from "grapesjs";
+import {SharedDataService} from "../shared-data.service";
 
 @Component({
   selector: 'app-constructor',
@@ -23,6 +24,13 @@ export class ConstructorComponent{
   declare newPanel: PanelsConfig;
   declare newBtn: PanelsConfig;
 
+  private test_style: string;
+
+  constructor(private sharedData: SharedDataService) {
+    console.log(this.sharedData.choosing_color_items)
+    this.test_style = this.sharedData.choosing_color_items
+    console.log(this.test_style)
+  }
 
   ngOnInit(): void {
     this.editor = this.initializeEditor();
@@ -75,7 +83,7 @@ export class ConstructorComponent{
             label: 'Blog',
             content: '\n' +
               '<div style="max-width: 1140px; margin: 3rem auto; padding: 0 15px; display: flex; flex-direction: row;">\n' +
-              '  <div style="border: 2px solid #e2e8f0; border-radius: 8px; overflow: hidden; margin: 1.5rem;">\n' +
+              '  <div style="border: 2px solid '+ this.test_style +'; border-radius: 8px; overflow: hidden; margin: 1.5rem;">\n' +
               '    <img src="https://dummyimage.com/720x400" alt="blog" style="width: 100%; height: 300px; object-fit: cover;">\n' +
               '    <div style="padding: 20px;">\n' +
               '      <h2 style="font-size: 12px; font-weight: 500; color: #9CA3AF; margin-bottom: 5px;">CATEGORY</h2>\n' +
@@ -96,7 +104,7 @@ export class ConstructorComponent{
               '      </div>\n' +
               '    </div>\n' +
               '  </div>\n' +
-              '  <div style="border: 2px solid #e2e8f0; border-radius: 8px; overflow: hidden; margin: 1.5rem;">\n' +
+              '  <div style="border: 2px solid '+ this.test_style +'; border-radius: 8px; overflow: hidden; margin: 1.5rem;">\n' +
               '    <img src="https://dummyimage.com/720x400" alt="blog" style="width: 100%; height: 300px; object-fit: cover;">\n' +
               '    <div style="padding: 20px;">\n' +
               '      <h2 style="font-size: 12px; font-weight: 500; color: #9CA3AF; margin-bottom: 5px;">CATEGORY</h2>\n' +
@@ -117,7 +125,7 @@ export class ConstructorComponent{
               '      </div>\n' +
               '    </div>\n' +
               '  </div>\n' +
-              '  <div style="border: 2px solid #e2e8f0; border-radius: 8px; overflow: hidden; margin: 1.5rem;">\n' +
+              '  <div style="border: 2px solid '+ this.test_style +'; border-radius: 8px; overflow: hidden; margin: 1.5rem;">\n' +
               '    <img src="https://dummyimage.com/720x400" alt="blog" style="width: 100%; height: 300px; object-fit: cover;">\n' +
               '    <div style="padding: 20px;">\n' +
               '      <h2 style="font-size: 12px; font-weight: 500; color: #9CA3AF; margin-bottom: 5px;">CATEGORY</h2>\n' +
@@ -149,7 +157,7 @@ export class ConstructorComponent{
               '  <div style="max-width: 1140px; margin: 0 auto; padding: 0 15px;">\n' +
               '    <div style="display: flex; margin: -15px;">\n' +
               '      <div style="padding: 15px; width: 33.3%;">\n' +
-              '        <div style="background-color: rgba(200, 200, 200, 0.75); padding: 20px; border-radius: 8px; overflow: hidden; position: relative; text-align: center;">\n' +
+              '        <div style="background-color: rgba(200, 200, 200, 0.75); padding: 20px; border: 8px solid '+ this.test_style +'; overflow: hidden; position: relative; text-align: center;">\n' +
               '          <h2 style="font-size: 12px; font-weight: 500; color: #9CA3AF; margin-bottom: 5px;">CATEGORY</h2>\n' +
               '          <h1 style="font-size: 24px; font-weight: 500; color: #111827; margin-bottom: 15px;">Raclette Blueberry Nextious</h1>\n' +
               '          <p style="font-size: 16px; color: #9CA3AF; margin-bottom: 15px;">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>\n' +
@@ -170,7 +178,7 @@ export class ConstructorComponent{
               '        </div>\n' +
               '      </div>\n' +
               '      <div style="padding: 15px; width: 33.3%;">\n' +
-              '        <div style="background-color: rgba(200, 200, 200, 0.75); padding: 20px; border-radius: 8px; overflow: hidden; position: relative; text-align: center;">\n' +
+              '        <div style="background-color: rgba(200, 200, 200, 0.75); padding: 20px; border: 8px solid '+ this.test_style +'; overflow: hidden; position: relative; text-align: center;">\n' +
               '          <h2 style="font-size: 12px; font-weight: 500; color: #9CA3AF; margin-bottom: 5px;">CATEGORY</h2>\n' +
               '          <h1 style="font-size: 24px; font-weight: 500; color: #111827; margin-bottom: 15px;">Ennui Snackwave Thundercats</h1>\n' +
               '          <p style="font-size: 16px; color: #9CA3AF; margin-bottom: 15px;">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>\n' +
@@ -191,7 +199,7 @@ export class ConstructorComponent{
               '        </div>\n' +
               '      </div>\n' +
               '      <div style="padding: 15px; width: 33.3%;">\n' +
-              '        <div style="background-color: rgba(200, 200, 200, 0.75); padding: 20px; border-radius: 8px; overflow: hidden; position: relative; text-align: center;">\n' +
+              '        <div style="background-color: rgba(200, 200, 200, 0.75); padding: 20px; border: 8px solid '+ this.test_style +'; overflow: hidden; position: relative; text-align: center;">\n' +
               '          <h2 style="font-size: 12px; font-weight: 500; color: #9CA3AF; margin-bottom: 5px;">CATEGORY</h2>\n' +
               '          <h1 style="font-size: 24px; font-weight: 500; color: #111827; margin-bottom: 15px;">Selvage Poke Waistcoat Godard</h1>\n' +
               '          <p style="font-size: 16px; color: #9CA3AF; margin-bottom: 15px;">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>\n' +
@@ -229,7 +237,7 @@ export class ConstructorComponent{
               '  .section {\n' +
               '    background-color: #fff;\n' +
               '    padding: 20px;\n' +
-              '    border-bottom: 1px solid #eee;\n' +
+              '    border-bottom: 1px solid '+ this.test_style +';\n' +
               '  }\n' +
               '  .section h2 {\n' +
               '    font-size: 1.5rem;\n' +
@@ -326,6 +334,7 @@ export class ConstructorComponent{
               '    display: flex;\n' +
               '    flex-wrap: wrap;\n' +
               '    margin: -8px;\n' +
+              '    border: 8px solid '+ this.test_style +';\n' +
               '  }\n' +
               '  .blog-post-item {\n' +
               '    padding: 8px;\n' +
@@ -558,11 +567,11 @@ export class ConstructorComponent{
               '      <div style="display: flex; flex-direction: row;">\n' +
               '        <div class="form-group" style="margin-right: 2.5rem">\n' +
               '          <label for="name">Name</label>\n' +
-              '          <input type="text" id="name" name="name" required>\n' +
+              '          <input type="text" id="name" name="name" style="border: 8px solid '+ this.test_style +'"  required>\n' +
               '        </div>\n' +
               '        <div class="form-group">\n' +
               '            <label for="email">Email</label>\n' +
-              '            <input type="email" id="email" name="email" required>\n' +
+              '            <input type="email" id="email" name="email" style="border: 8px solid '+ this.test_style +'" required>\n' +
               '        </div>\n' +
               '      </div>\n' +
               '      <div class="form-group">\n' +
@@ -617,7 +626,7 @@ export class ConstructorComponent{
               '    }\n' +
               '    .card {\n' +
               '      background-color: #fff;\n' +
-              '      border-right: 2px solid #d1d1d1;\n' +
+              '      border-right: 2px solid '+ this.test_style +';\n' +
               '      padding: 20px;\n' +
               '      margin: 10px;\n' +
               '    }\n' +
@@ -703,7 +712,7 @@ export class ConstructorComponent{
               '    display: flex;\n' +
               '    flex-direction: row;\n' +
               '    background-color: #fff;\n' +
-              '    border-bottom: 5px solid #4f46e5;\n' +
+              '    border-bottom: 5px solid '+ this.test_style +';\n' +
               '    margin: 3rem;\n' +
               '  }\n' +
               '  .card {\n' +
@@ -789,7 +798,7 @@ export class ConstructorComponent{
               '  .img-view {\n' +
               '    width: 30px;\n' +
               '    height: 30px;\n' +
-              '    background: #E0E7FF;\n' +
+              '    background: '+ this.test_style +';\n' +
               '    border: 2px solid transparent;\n' +
               '    border-radius: 2rem;\n' +
               '    display: flex;\n' +
@@ -872,7 +881,7 @@ export class ConstructorComponent{
               '    border: none;\n' +
               '    border-radius: 5px;\n' +
               '    font-family: "Segoe UI Semibold";\n' +
-              '    color: #6663F1\n' +
+              '    color: '+ this.test_style +'\n' +
               '  }\n' +
               '  .border-right {\n' +
               '    border-right: 2px solid #d1d1d1;\n' +
@@ -964,7 +973,7 @@ export class ConstructorComponent{
               '  font-family: \'Poppins\', sans-serif;\n' +
               '}\n' +
               '.bg-indigo-500 {\n' +
-              '  background-color: #805ad5;\n' +
+              '  background-color: '+ this.test_style +';\n' + //#805ad5
               '}\n' +
               '.border-0 {\n' +
               '  border: 0;\n' +
@@ -1167,7 +1176,7 @@ export class ConstructorComponent{
               '  justify-content: center;\n' +
               '  align-items: center;\n' +
               '  margin: 1rem 1rem 1rem 5%;\n' +
-              '  background: #6366f1;\n' +
+              '  background: '+ this.test_style +';\n' + //#6366f1
               '  border: 3px solid transparent;\n' +
               '  border-radius: 5rem;\n' +
               '}\n' +
@@ -1252,7 +1261,7 @@ export class ConstructorComponent{
               '  justify-content: center;\n' +
               '  align-items: center;\n' +
               '  margin: 1rem 1rem 1rem 5%;\n' +
-              '  background: #6366f1;\n' +
+              '  background: '+ this.test_style +';\n' + //#6366F1
               '  border: 3px solid transparent;\n' +
               '  border-radius: 5rem;\n' +
               '}\n' +
@@ -1339,7 +1348,7 @@ export class ConstructorComponent{
               '  justify-content: center;\n' +
               '  align-items: center;\n' +
               '  margin: 1rem 1rem 1rem 25%;\n' +
-              '  background: #6366f1;\n' +
+              '  background: '+ this.test_style +';\n' + //#6366f1
               '  border: 3px solid transparent;\n' +
               '  border-radius: 5rem;\n' +
               '}\n' +
@@ -1426,7 +1435,7 @@ export class ConstructorComponent{
               '  justify-content: center;\n' +
               '  align-items: center;\n' +
               '  margin: 1rem 1rem 1rem 5%;\n' +
-              '  background: #6366f1;\n' +
+              '  background: '+ this.test_style +';\n' +//#6366f1
               '  border: 3px solid transparent;\n' +
               '  border-radius: 5rem;\n' +
               '}\n' +
@@ -1514,7 +1523,7 @@ export class ConstructorComponent{
               '  justify-content: center;\n' +
               '  align-items: center;\n' +
               '  margin: 1rem 1rem 1rem 15%;\n' +
-              '  background: #6366f1;\n' +
+              '  background: '+ this.test_style +';\n' +//#6366f1
               '  border: 3px solid transparent;\n' +
               '  border-radius: 5rem;\n' +
               '}\n' +
@@ -1622,7 +1631,7 @@ export class ConstructorComponent{
               '    justify-content: center;\n' +
               '    align-items: center;\n' +
               '    margin: 1rem 1rem 1rem 15%;\n' +
-              '    background: #6366f1;\n' +
+              '    background: '+ this.test_style +'; \n' +//#6366f1
               '    border: 3px solid transparent;\n' +
               '    border-radius: 5rem;\n' +
               '  }\n' +
@@ -1758,7 +1767,7 @@ export class ConstructorComponent{
               '    justify-content: center;\n' +
               '    align-items: center;\n' +
               '    margin: 1rem 1rem 1rem 15%;\n' +
-              '    background: #6366f1;\n' +
+              '    background: '+ this.test_style +';\n' +//#6366f1
               '    border: 3px solid transparent;\n' +
               '    border-radius: 5rem;\n' +
               '  }\n' +
@@ -1812,7 +1821,7 @@ export class ConstructorComponent{
               '  font-weight: 500;\n' +
               '  line-height: 1.25rem;\n' +
               '  font-size: 1rem;\n' +
-              '  background: #6366f1;\n' +
+              '  background: '+ this.test_style +';\n' +//#6366f1
               '  color: white;\n' +
               '  border: 3px solid transparent;\n' +
               '  border-radius: 0.25rem;\n' +
@@ -1931,7 +1940,7 @@ export class ConstructorComponent{
               '    justify-content: center;\n' +
               '    align-items: center;\n' +
               '    margin: 1rem 1rem 1rem 15%;\n' +
-              '    background: #6366f1;\n' +
+              '    background: '+ this.test_style +';\n' +//#6366f1
               '    border: 3px solid transparent;\n' +
               '    border-radius: 5rem;\n' +
               '  }\n' +
@@ -2174,12 +2183,12 @@ export class ConstructorComponent{
               '      </table>\n' +
               '    </div>\n' +
               '    <div style="padding-left: 1rem; max-width: 32rem; margin: 1rem auto; display: flex">\n' +
-              '      <a style="color: #6366f1; align-items: center; display: inline-flex;">Learn More\n' +
+              '      <a style="color: '+ this.test_style +'; align-items: center; display: inline-flex;">Learn More\n' +//#6366f1
               '        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 1rem; height: 1rem; margin-left: 0.5rem;" class="w-4 h-4 ml-2" viewBox="0 0 24 24">\n' +
               '          <path d="M5 12h14M12 5l7 7-7 7"></path>\n' +
               '        </svg>\n' +
               '      </a>\n' +
-              '      <button style="margin-left: auto; color: #fff; background-color: #6366f1; border-width: 0; padding: 0.5rem 1.5rem;outline: none; transition: background-color 0.3s ease 0s; border-radius: 0.375rem;">Button</button>\n' +
+              '      <button style="margin-left: auto; color: #fff; background-color: '+ this.test_style +'; border-width: 0; padding: 0.5rem 1.5rem;outline: none; transition: background-color 0.3s ease 0s; border-radius: 0.375rem;">Button</button>\n' +//#6366f1
               '    </div>\n' +
               '  </div>\n' +
               '</section>\n',
@@ -2250,7 +2259,14 @@ export class ConstructorComponent{
               '</div>\n',
             category: 'Statistic',
             media: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 24 24" height="24" width="24"><path stroke="#000000" d="M18.208333333333336 1.4375H4.791666666666667a2.875 2.875 0 0 0 -2.875 2.875v14.375a2.875 2.875 0 0 0 2.875 2.875h13.416666666666668a2.875 2.875 0 0 0 2.875 -2.875v-14.375a2.875 2.875 0 0 0 -2.875 -2.875Z" stroke-width="1"></path><path stroke="#000000" stroke-linejoin="round" d="M18.208333333333336 6.229166666666667V19.166666666666668" stroke-width="1"></path><path stroke="#000000" stroke-linejoin="round" d="M15.525 11.979166666666668V19.166666666666668" stroke-width="1"></path><path stroke="#000000" stroke-linejoin="round" d="M4.791666666666667 14.854166666666668V19.166666666666668" stroke-width="1"></path><path stroke="#000000" stroke-linejoin="round" d="M7.4750000000000005 11.020833333333334V19.166666666666668" stroke-width="1"></path><path stroke="#000000" stroke-linejoin="round" d="M10.158333333333333 13.416666666666668v5.75" stroke-width="1"></path><path stroke="#000000" stroke-linejoin="round" d="M12.841666666666667 9.104166666666668V19.166666666666668" stroke-width="1"></path><path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M6.708333333333334 3.8333333333333335h9.583333333333334" stroke-width="1"></path></svg>'
-          }
+          },
+          {
+            id: 'test-1',
+            label: 'Test',
+            content: '<div style="background:' + this.test_style + '">test-text</div>',
+            category: 'Test',
+            media: ''
+          },
   ]
       },
     });

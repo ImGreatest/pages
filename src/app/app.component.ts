@@ -27,6 +27,7 @@ import {ProfileUserComponent} from "./profile-user/profile-user.component";
 export class AppComponent {
   title = 'pages';
   activeItemIndex = 0;
+  isShow = false;
 
   constructor(
     private sharedData: SharedDataService,

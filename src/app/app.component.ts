@@ -28,6 +28,7 @@ export class AppComponent {
   title = 'pages';
   activeItemIndex = 0;
   isShow = false;
+  openSideBar = false;
 
   constructor(
     private sharedData: SharedDataService,
@@ -41,6 +42,5 @@ export class AppComponent {
   navigateToHome() {
     this.router.navigate(['']);
   }
-
 
 }

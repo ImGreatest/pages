@@ -7,6 +7,8 @@ import { Routes, RouterModule } from '@angular/router';
 import * as XLSX from 'xlsx';
 import { MatButtonModule } from '@angular/material/button';
 import {UrlService} from "../url.service";
+import {TuiSidebarModule} from "@taiga-ui/addon-mobile";
+import {TuiButtonModule} from "@taiga-ui/core";
 
 @Component({
   selector: 'app-schemas',
@@ -15,12 +17,16 @@ import {UrlService} from "../url.service";
     NgStyle,
     FormsModule,
     NgClass,
-    MatButtonModule
+    MatButtonModule,
+    TuiSidebarModule,
+    TuiButtonModule
   ],
   templateUrl: './schemas.component.html',
   styleUrl: './schemas.component.less'
 })
 export class SchemasComponent {
+  openSideBar = false;
+
   backgroundColor: string = 'white';
   NameMaket: string = '';
   TextOpisania: string = '';
@@ -51,6 +57,14 @@ export class SchemasComponent {
 
   checkUrl() {
     const currentUrl = this.url.getCurrentUrl()
+  }
+
+  toggle(open: boolean): void {
+    this.openSideBar = open;
+  }
+
+  closeSideBar(): void {
+    this.openSideBar = false
   }
 
   readExcelFile() {
@@ -175,4 +189,6 @@ export class SchemasComponent {
       element.scrollIntoView({behavior: 'smooth'});
     }
   }
+
+  protected readonly open = open;
 }

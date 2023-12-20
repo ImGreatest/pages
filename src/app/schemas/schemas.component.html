@@ -13,6 +13,14 @@
   <button class="main-page-button"(click)="scrollTo('companion')">Заключительная страница</button>
 </div>
 
+<button tuiButton type="button" (click)="toggle(true)">
+  Show sidebar
+</button>
+<div *tuiSidebar="openSideBar; direction: 'left'">
+  <ng-container></ng-container>
+  <button tuiButton type="button" (click)="closeSideBar()">close sidebar</button>
+</div>
+
 <div id="str_uslovi">
   <div class ="granish">
     <div id="content1" [ngStyle]="{'background-color': backgroundColor}">

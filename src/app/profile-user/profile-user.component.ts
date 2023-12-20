@@ -17,6 +17,4 @@ import {ReactiveFormsModule} from "@angular/forms";
   templateUrl: './profile-user.component.html',
   styleUrl: './profile-user.component.less'
 })
-export class ProfileUserComponent {
-
-}
+export class ProfileUserComponent {}

@@ -1,15 +1,17 @@
-import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
-import { SharedDataService } from "./shared-data.service";
+import {NgDompurifySanitizer} from "@tinkoff/ng-dompurify";
+import {SharedDataService} from "./shared-data.service";
 import {
-  TuiRootModule,
-  TuiDialogModule,
-  TuiAlertModule,
   TUI_SANITIZER,
+  TuiAlertModule,
   TuiAlertService,
-  TuiSvgModule, TuiModeModule, TuiGroupModule
+  TuiDialogModule,
+  TuiGroupModule,
+  TuiModeModule,
+  TuiRootModule,
+  TuiSvgModule
 } from "@taiga-ui/core";
 import {Component, Inject} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {Router, RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {TuiAvatarModule, TuiInputCountModule, TuiMarkerIconModule, TuiTabsModule} from "@taiga-ui/kit";
 import {FormsModule} from "@angular/forms";
@@ -28,7 +30,6 @@ export class AppComponent {
   title = 'pages';
   activeItemIndex = 0;
   isShow = false;
-  openSideBar = false;
 
   constructor(
     private sharedData: SharedDataService,
@@ -42,5 +43,6 @@ export class AppComponent {
   navigateToHome() {
     this.router.navigate(['']);
   }
+
 
 }

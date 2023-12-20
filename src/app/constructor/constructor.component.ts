@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {TuiButtonModule} from "@taiga-ui/core";
 import {TuiBlockStatusModule} from "@taiga-ui/layout";
 import {AsyncPipe} from "@angular/common";
@@ -25,11 +25,23 @@ export class ConstructorComponent{
   declare newBtn: PanelsConfig;
 
   private test_style: string;
+  private first_label: string = 'The Catalyzer';
+  private second_label: string = 'The Catalyzer';
+  private third_label: string = 'The Catalyzer';
+  private first_desc: string = 'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.';
+  private second_desc: string = 'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.';
+  private third_desc: string = 'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.';
 
   constructor(private sharedData: SharedDataService) {
-    console.log(this.sharedData.choosing_color_items)
-    this.test_style = this.sharedData.choosing_color_items
-    console.log(this.test_style)
+    console.log(this.sharedData.choosing_color_items);
+    this.test_style = this.sharedData.choosing_color_items;
+    console.log(this.test_style);
+    this.first_label = this.sharedData.first_label;
+    this.second_label = this.sharedData.second_label;
+    this.third_label = this.sharedData.third_label;
+    this.first_desc = this.sharedData.first_desc;
+    this.second_desc = this.sharedData.second_desc;
+    this.third_desc = this.sharedData.third_desc;
   }
 
   ngOnInit(): void {
@@ -87,8 +99,8 @@ export class ConstructorComponent{
               '    <img src="https://dummyimage.com/720x400" alt="blog" style="width: 100%; height: 300px; object-fit: cover;">\n' +
               '    <div style="padding: 20px;">\n' +
               '      <h2 style="font-size: 12px; font-weight: 500; color: #9CA3AF; margin-bottom: 5px;">CATEGORY</h2>\n' +
-              '      <h1 style="font-size: 18px; font-weight: 500; color: #111827; margin-bottom: 15px;">The Catalyzer</h1>\n' +
-              '      <p style="font-size: 16px; color: #9CA3AF; margin-bottom: 15px;">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>\n' +
+              '      <h1 style="font-size: 18px; font-weight: 500; color: #111827; margin-bottom: 15px;">'+ this.first_label +'</h1>\n' +
+              '      <p style="font-size: 16px; color: #9CA3AF; margin-bottom: 15px;">'+ this.first_desc +'</p>\n' +
               '      <div style="display: flex; align-items: center; justify-content: space-between;">\n' +
               '        <a href="#" style="color: #4F46E5; text-decoration: none; display: inline-flex; align-items: center;">Learn More</a>\n' +
               '        <div style="display: flex; justify-content: center; align-items: center; flex-direction: row">\n' +
@@ -108,8 +120,8 @@ export class ConstructorComponent{
               '    <img src="https://dummyimage.com/720x400" alt="blog" style="width: 100%; height: 300px; object-fit: cover;">\n' +
               '    <div style="padding: 20px;">\n' +
               '      <h2 style="font-size: 12px; font-weight: 500; color: #9CA3AF; margin-bottom: 5px;">CATEGORY</h2>\n' +
-              '      <h1 style="font-size: 18px; font-weight: 500; color: #111827; margin-bottom: 15px;">The Catalyzer</h1>\n' +
-              '      <p style="font-size: 16px; color: #9CA3AF; margin-bottom: 15px;">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>\n' +
+              '      <h1 style="font-size: 18px; font-weight: 500; color: #111827; margin-bottom: 15px;">'+ this.second_label +'</h1>\n' +
+              '      <p style="font-size: 16px; color: #9CA3AF; margin-bottom: 15px;">'+ this.second_desc +'</p>\n' +
               '      <div style="display: flex; align-items: center; justify-content: space-between;">\n' +
               '        <a href="#" style="color: #4F46E5; text-decoration: none; display: inline-flex; align-items: center;">Learn More</a>\n' +
               '        <div style="display: flex; justify-content: center; align-items: center; flex-direction: row">\n' +
@@ -129,8 +141,8 @@ export class ConstructorComponent{
               '    <img src="https://dummyimage.com/720x400" alt="blog" style="width: 100%; height: 300px; object-fit: cover;">\n' +
               '    <div style="padding: 20px;">\n' +
               '      <h2 style="font-size: 12px; font-weight: 500; color: #9CA3AF; margin-bottom: 5px;">CATEGORY</h2>\n' +
-              '      <h1 style="font-size: 18px; font-weight: 500; color: #111827; margin-bottom: 15px;">The Catalyzer</h1>\n' +
-              '      <p style="font-size: 16px; color: #9CA3AF; margin-bottom: 15px;">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>\n' +
+              '      <h1 style="font-size: 18px; font-weight: 500; color: #111827; margin-bottom: 15px;">'+ this.third_label +'</h1>\n' +
+              '      <p style="font-size: 16px; color: #9CA3AF; margin-bottom: 15px;">'+ this.third_desc +'</p>\n' +
               '      <div style="display: flex; align-items: center; justify-content: space-between;">\n' +
               '        <a href="#" style="color: #4F46E5; text-decoration: none; display: inline-flex; align-items: center;">Learn More</a>\n' +
               '        <div style="display: flex; justify-content: center; align-items: center; flex-direction: row">\n' +

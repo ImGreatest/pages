@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RecoverComponent } from './recover.component';
+import {RecoverComponent} from './recover.component';
 
 describe('RecoverComponent', () => {
   let component: RecoverComponent;
@@ -11,7 +11,7 @@ describe('RecoverComponent', () => {
       imports: [RecoverComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(RecoverComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

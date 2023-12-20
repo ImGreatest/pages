@@ -18,7 +18,7 @@ export const routes: Routes = [
   { path: 'recover', component: RecoverComponent }, // recover profile
   { path: 'profile', component: ProfileUserComponent }, // user profile
   { path: 'constructor', component: ConstructorComponent }, // layout grapes.js
-  { path: 'projects', component: ProjectsComponent } // projects profile
+  { path: 'projects', component: ProjectsComponent }, // projects profile
 ];
 
 @NgModule({

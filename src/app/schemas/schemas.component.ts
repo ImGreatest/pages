@@ -7,8 +7,10 @@ import { Routes, RouterModule } from '@angular/router';
 import * as XLSX from 'xlsx';
 import { MatButtonModule } from '@angular/material/button';
 import {UrlService} from "../url.service";
-import {TuiSidebarModule} from "@taiga-ui/addon-mobile";
 import {TuiButtonModule} from "@taiga-ui/core";
+import {TuiSidebarModule} from "@taiga-ui/addon-mobile";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatDividerModule} from "@angular/material/divider";
 
 @Component({
   selector: 'app-schemas',
@@ -18,15 +20,16 @@ import {TuiButtonModule} from "@taiga-ui/core";
     FormsModule,
     NgClass,
     MatButtonModule,
+    TuiButtonModule,
     TuiSidebarModule,
-    TuiButtonModule
+    MatSidenavModule,
+    MatDividerModule
   ],
   templateUrl: './schemas.component.html',
   styleUrl: './schemas.component.less'
 })
 export class SchemasComponent {
   openSideBar = false;
-
   backgroundColor: string = 'white';
   NameMaket: string = '';
   TextOpisania: string = '';
@@ -42,9 +45,16 @@ export class SchemasComponent {
   dannie_info: string[] = [];
   geo_location: string[] = [];
   zakluchenie: string[] = [];
+  datas: string[] = [];
+  danni_maket: string[] = [];
+  contact_dannie: string[] = [];
+
   choosen_color: string = '';
 
   h1Elem: string;
+  first_label: string = '';
+  second_label: string = '';
+  third_label: string = '';
 
   constructor(private sharedData: SharedDataService, private url: UrlService) {
     this.h1Elem = this.sharedData.title;
@@ -57,6 +67,7 @@ export class SchemasComponent {
 
   checkUrl() {
     const currentUrl = this.url.getCurrentUrl()
+    console.log(this.url.getCurrentUrl())
   }
 
   toggle(open: boolean): void {
@@ -65,6 +76,10 @@ export class SchemasComponent {
 
   closeSideBar(): void {
     this.openSideBar = false
+  }
+
+  printInfo(): void {
+    console.log(this.sharedData.first_label, this.sharedData.second_label, this.sharedData.third_label, this.sharedData.first_desc)
   }
 
   readExcelFile() {
@@ -85,13 +100,47 @@ export class SchemasComponent {
         this.dannie_info[2] = worksheet['H3'].v;
         this.dannie_info[3] = worksheet['I3'].v;
         this.dannie_info[4] = worksheet['J3'].v;
-        // данные для третьей страницы
-
-        // данные для четвертой страницы
-
-        // данные для пятой страницы
 
         console.log(this.NameMaket);
+
+        this.datas[0] = worksheet['A6'].v;
+        this.datas[1] = worksheet['B6'].v;
+        this.datas[2] = worksheet['C6'].v;
+        this.datas[3] = worksheet['D6'].v;
+        this.datas[4] = worksheet['E6'].v;
+        this.datas[5] = worksheet['F6'].v;
+        console.log(this.datas[0]);
+
+        this.sharedData.first_label = this.datas[0];
+        this.sharedData.second_label = this.datas[1];
+        this.sharedData.third_label = this.datas[2];
+        this.sharedData.first_desc = this.datas[3];
+        this.sharedData.second_desc = this.datas[4];
+        this.sharedData.third_desc = this.datas[5];
+        console.log(this.sharedData.first_label)
+
+        this.dannie_info[0] = worksheet['B3'].v;
+        this.dannie_info[1] = worksheet['C3'].v;
+        this.dannie_info[2] = worksheet['D3'].v;
+        this.dannie_info[3] = worksheet['E3'].v;
+        this.dannie_info[4] = worksheet['F3'].v;
+        this.dannie_info[5] = worksheet['G3'].v;
+        this.dannie_info[6] = worksheet['H3'].v;
+        this.dannie_info[7] = worksheet['I3'].v;
+        this.dannie_info[8] = worksheet['J3'].v;
+        this.dannie_info[9] = worksheet['K3'].v;
+        this.dannie_info[10] = worksheet['L3'].v;
+        this.dannie_info[11] = worksheet['M3'].v;
+
+        this.danni_maket[0] = worksheet['N3'].v;
+        this.danni_maket[1] = worksheet['O3'].v;
+        this.danni_maket[2] = worksheet['P3'].v;
+
+        this.contact_dannie[0] = worksheet['Q3'].v;
+        this.contact_dannie[1] = worksheet['R3'].v;
+        this.contact_dannie[2] = worksheet['S3'].v
+        this.contact_dannie[3] = worksheet['T3'].v;
+
       })
       .catch(error => {
         console.error('Произошла ошибка при чтении файла', error);
@@ -152,8 +201,30 @@ export class SchemasComponent {
         this.zakluchenie[2] = worksheet['T3'].v;
         this.zakluchenie[3] = worksheet['U3'].v;
         this.zakluchenie[4] = worksheet['V3'].v;
-        console.log(this.NameMaket);
 
+        this.dannie_info[0] = worksheet['B3'].v;
+        this.dannie_info[1] = worksheet['C3'].v;
+        this.dannie_info[2] = worksheet['D3'].v;
+        this.dannie_info[3] = worksheet['E3'].v;
+        this.dannie_info[4] = worksheet['F3'].v;
+        this.dannie_info[5] = worksheet['G3'].v;
+        this.dannie_info[6] = worksheet['H3'].v;
+        this.dannie_info[7] = worksheet['I3'].v;
+        this.dannie_info[8] = worksheet['J3'].v;
+        this.dannie_info[9] = worksheet['K3'].v;
+        this.dannie_info[10] = worksheet['L3'].v;
+        this.dannie_info[11] = worksheet['M3'].v;
+
+        this.danni_maket[0] = worksheet['N3'].v;
+        this.danni_maket[1] = worksheet['O3'].v;
+        this.danni_maket[2] = worksheet['P3'].v;
+
+        this.contact_dannie[0] = worksheet['Q3'].v;
+        this.contact_dannie[1] = worksheet['R3'].v;
+        this.contact_dannie[2] = worksheet['S3'].v
+        this.contact_dannie[3] = worksheet['T3'].v;
+
+        console.log(this.NameMaket);
         console.log('Файл успешно загружен и обновлен');
       };
       reader.readAsArrayBuffer(file);

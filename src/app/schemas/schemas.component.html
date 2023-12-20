@@ -5,19 +5,69 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.12.2/less.min.js"></script>
 </head>
 <body>
-<div class="left-field">
-  <button class="main-page-button" (click)="scrollTo('str_uslovi')">Выбор размеров</button>
-  <button class="main-page-button"(click)="scrollTo('osnov_str')">Основная страница</button>
-  <button class="main-page-button"(click)="scrollTo('str_dannix')">Страница информации</button>
-  <button class="main-page-button"(click)="scrollTo('geo_location')">Геолокация</button>
-  <button class="main-page-button"(click)="scrollTo('companion')">Заключительная страница</button>
+
+<div>
+  <div class="granish" style="display: flex; justify-content: center">
+    <header>
+      <button class="round-button red" (click)="changeInputColor_dannie('red')"></button>
+      <button class="round-button blue" (click)="changeInputColor_dannie('blue')"></button>
+      <button class="round-button green" (click)="changeInputColor_dannie('green')"></button>
+      <button class="round-button orange" (click)="changeInputColor_dannie('orange')"></button>
+      <button class="round-button yellow" (click)="changeInputColor_dannie('yellow')"></button>
+      <button class="round-button greenyellow" (click)="changeInputColor_dannie('greenyellow')"></button><nav class="header-nav">
+    </nav>
+    </header>
+    <script>
+      function changeBackgroundColor(color) {
+        document.getElementById('content').style.backgroundColor = color;
+      }
+    </script>
+  </div>
 </div>
 
-<button tuiButton type="button" (click)="toggle(true)">
-  Show sidebar
-</button>
 <div *tuiSidebar="openSideBar; direction: 'left'">
-  <ng-container></ng-container>
+  <mat-sidenav-container>
+    <mat-sidenav  mode="side"
+                  opened="true"
+                  style="border-color: transparent"
+                  [fixedInViewport]="true"
+                  [fixedTopGap]="64">
+      <div style="display: flex; flex-direction: column; justify-content: center">
+        <button tuiButton size="m" appearance="secondary-destructive" type="button" (click)="toggle(true)">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.855 -0.855 24 24" height="24" width="24"><g id="bullet-list--points-bullet-unordered-list-lists-bullets"><path id="Vector" stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M1.592142857142857 4.776428571428571c0.43965432857142855 0 0.7960714285714285 -0.3564171 0.7960714285714285 -0.7960714285714285S2.031797185714286 3.184285714285714 1.592142857142857 3.184285714285714c-0.43965751285714283 0 -0.7960714285714285 0.3564171 -0.7960714285714285 0.7960714285714285s0.3564139157142857 0.7960714285714285 0.7960714285714285 0.7960714285714285Z" stroke-width="1.71"></path><path id="Vector_2" stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M7.164642857142857 3.9803571428571427h14.329285714285714" stroke-width="1.71"></path><path id="Vector_3" stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M1.592142857142857 11.941071428571428c0.43965432857142855 0 0.7960714285714285 -0.3564171 0.7960714285714285 -0.7960714285714285s-0.3564171 -0.7960714285714285 -0.7960714285714285 -0.7960714285714285c-0.43965751285714283 0 -0.7960714285714285 0.3564171 -0.7960714285714285 0.7960714285714285s0.3564139157142857 0.7960714285714285 0.7960714285714285 0.7960714285714285Z" stroke-width="1.71"></path><path id="Vector_4" stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M7.164642857142857 11.145h14.329285714285714" stroke-width="1.71"></path><path id="Vector_5" stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M1.592142857142857 19.105714285714285c0.43965432857142855 0 0.7960714285714285 -0.3564807857142857 0.7960714285714285 -0.7960714285714285S2.031797185714286 17.513571428571428 1.592142857142857 17.513571428571428c-0.43965751285714283 0 -0.7960714285714285 0.3564807857142857 -0.7960714285714285 0.7960714285714285s0.3564139157142857 0.7960714285714285 0.7960714285714285 0.7960714285714285Z" stroke-width="1.71"></path><path id="Vector_6" stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M7.164642857142857 18.309642857142855h14.329285714285714" stroke-width="1.71"></path></g></svg>
+        </button>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: center; align-content: center" *tuiSidebar="openSideBar; direction: 'left'">
+        <button tuiButton type="button" appearance="accent" class="sidebar-btn" (click)="scrollTo('str_uslovi')">
+          <div class="icon-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="14" width="14"><g id="expand--big-bigger-design-expand-larger-resize-size-square"><path id="Union" fill="#000" fill-rule="evenodd" d="M1.5 1.75a0.25 0.25 0 0 1 0.25 -0.25h0.5a0.75 0.75 0 0 0 0 -1.5h-0.5A1.75 1.75 0 0 0 0 1.75v0.5a0.75 0.75 0 0 0 1.5 0v-0.5Zm9.5 -1a0.75 0.75 0 0 1 0.75 -0.75h0.5C13.216 0 14 0.784 14 1.75v0.5a0.75 0.75 0 0 1 -1.5 0v-0.5a0.25 0.25 0 0 0 -0.25 -0.25h-0.5A0.75 0.75 0 0 1 11 0.75ZM3.5 5A1.5 1.5 0 0 1 5 3.5h4A1.5 1.5 0 0 1 10.5 5v4A1.5 1.5 0 0 1 9 10.5H5A1.5 1.5 0 0 1 3.5 9V5Zm9.75 6a0.75 0.75 0 0 1 0.75 0.75v0.5A1.75 1.75 0 0 1 12.25 14h-0.5a0.75 0.75 0 0 1 0 -1.5h0.5a0.25 0.25 0 0 0 0.25 -0.25v-0.5a0.75 0.75 0 0 1 0.75 -0.75Zm-11.75 0.75a0.75 0.75 0 0 0 -1.5 0v0.5C0 13.216 0.784 14 1.75 14h0.5a0.75 0.75 0 0 0 0 -1.5h-0.5a0.25 0.25 0 0 1 -0.25 -0.25v-0.5Zm3.75 1.5A0.75 0.75 0 0 1 6 12.5h2A0.75 0.75 0 0 1 8 14H6a0.75 0.75 0 0 1 -0.75 -0.75ZM6 0a0.75 0.75 0 0 0 0 1.5h2A0.75 0.75 0 0 0 8 0H6ZM0.75 5.25A0.75 0.75 0 0 1 1.5 6v2A0.75 0.75 0 0 1 0 8V6a0.75 0.75 0 0 1 0.75 -0.75ZM14 6a0.75 0.75 0 0 0 -1.5 0v2A0.75 0.75 0 0 0 14 8V6Z" clip-rule="evenodd" stroke-width="1"></path></g></svg>
+          </div>
+          Sizes
+        </button>
+        <button tuiButton type="button" appearance="accent" class="sidebar-btn" (click)="scrollTo('osnov_str')">
+          <div class="icon-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 12" height="12" width="12"><g id="dashboard-3--app-application-dashboard-home-layout-vertical"><path id="Union" fill="#000" fill-rule="evenodd" d="M0.8571428571428571 0a0.8571428571428571 0.8571428571428571 0 0 0 -0.8571428571428571 0.8571428571428571v5.142857142857142a0.8571428571428571 0.8571428571428571 0 0 0 0.8571428571428571 0.8571428571428571h3.4285714285714284a0.8571428571428571 0.8571428571428571 0 0 0 0.8571428571428571 -0.8571428571428571V0.8571428571428571a0.8571428571428571 0.8571428571428571 0 0 0 -0.8571428571428571 -0.8571428571428571H0.8571428571428571Zm6 0.8571428571428571a0.8571428571428571 0.8571428571428571 0 0 1 0.8571428571428571 -0.8571428571428571h3.4285714285714284a0.8571428571428571 0.8571428571428571 0 0 1 0.8571428571428571 0.8571428571428571v1.7228571428571426a0.8571428571428571 0.8571428571428571 0 0 1 -0.8571428571428571 0.8571428571428571H7.7142857142857135a0.8571428571428571 0.8571428571428571 0 0 1 -0.8571428571428571 -0.8571428571428571V0.8571428571428571Zm0 5.142857142857142a0.8571428571428571 0.8571428571428571 0 0 1 0.8571428571428571 -0.8571428571428571h3.4285714285714284a0.8571428571428571 0.8571428571428571 0 0 1 0.8571428571428571 0.8571428571428571v5.142857142857142a0.8571428571428571 0.8571428571428571 0 0 1 -0.8571428571428571 0.8571428571428571H7.7142857142857135a0.8571428571428571 0.8571428571428571 0 0 1 -0.8571428571428571 -0.8571428571428571V6Zm-6.857142857142857 3.42a0.8571428571428571 0.8571428571428571 0 0 1 0.8571428571428571 -0.8571428571428571h3.4285714285714284a0.8571428571428571 0.8571428571428571 0 0 1 0.8571428571428571 0.8571428571428571V11.142857142857142a0.8571428571428571 0.8571428571428571 0 0 1 -0.8571428571428571 0.8571428571428571H0.8571428571428571a0.8571428571428571 0.8571428571428571 0 0 1 -0.8571428571428571 -0.8571428571428571v-1.7228571428571426Z" clip-rule="evenodd" stroke-width="1"></path></g></svg>
+          </div>
+          Content
+        </button>
+        <button tuiButton type="button" appearance="accent" class="sidebar-btn" (click)="scrollTo('str_dannix')">
+          <div class="icon-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 12" height="12" width="12"><g id="information-circle--information-frame-info-more-help-point-circle"><path id="Subtract" fill="#000" fill-rule="evenodd" d="M6 12A6 6 0 1 0 6 0a6 6 0 0 0 0 12ZM4.714285714285714 8.035714285714285a0.5357142857142857 0.5357142857142857 0 1 0 0 1.0714285714285714h2.571428571428571a0.5357142857142857 0.5357142857142857 0 1 0 0 -1.0714285714285714h-0.75V5.571428571428571A0.5357142857142857 0.5357142857142857 0 0 0 6 5.035714285714286H5.142857142857142a0.5357142857142857 0.5357142857142857 0 1 0 0 1.0714285714285714h0.3214285714285714v1.9285714285714284H4.714285714285714ZM6.857142857142857 3.4285714285714284a0.8571428571428571 0.8571428571428571 0 1 1 -1.7142857142857142 0 0.8571428571428571 0.8571428571428571 0 0 1 1.7142857142857142 0Z" clip-rule="evenodd" stroke-width="1"></path></g></svg>
+          </div>
+          Info
+        </button>
+        <button tuiButton type="button" appearance="accent" class="sidebar-btn" (click)="scrollTo('companion')">
+          <div class="icon-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 12" height="12" width="12"><g id="delete-1--remove-add-button-buttons-delete-cross-x-mathematics-multiply-math"><path id="Union" fill="#000" fill-rule="evenodd" d="M1.463142857142857 0.2511428571428571A0.8571428571428571 0.8571428571428571 0 0 0 0.2511428571428571 1.463142857142857L4.788 6 0.2511428571428571 10.536857142857142a0.8571428571428571 0.8571428571428571 0 1 0 1.212 1.212L6 7.212l4.5368571428571425 4.5368571428571425a0.8571428571428571 0.8571428571428571 0 0 0 1.212 -1.212L7.212 6l4.5368571428571425 -4.5368571428571425A0.8571428571428571 0.8571428571428571 0 0 0 10.536857142857142 0.2511428571428571L6 4.788 1.463142857142857 0.2511428571428571Z" clip-rule="evenodd" stroke-width="1"></path></g></svg>
+          </div>
+          Footer
+        </button>
+        <button tuiButton type="button" appearance="accent" class="sidebar-btn" (click)="closeSideBar()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24"><g id="delete-1--remove-add-button-buttons-delete-cross-x-mathematics-multiply-math"><path id="Union" fill="#000" fill-rule="evenodd" d="M2.926285714285714 0.5022857142857142A1.7142857142857142 1.7142857142857142 0 0 0 0.5022857142857142 2.926285714285714L9.576 12 0.5022857142857142 21.073714285714285a1.7142857142857142 1.7142857142857142 0 1 0 2.424 2.424L12 14.424l9.073714285714285 9.073714285714285a1.7142857142857142 1.7142857142857142 0 0 0 2.424 -2.424L14.424 12l9.073714285714285 -9.073714285714285A1.7142857142857142 1.7142857142857142 0 0 0 21.073714285714285 0.5022857142857142L12 9.576 2.926285714285714 0.5022857142857142Z" clip-rule="evenodd" stroke-width="1"></path></g></svg>
+        </button>
+      </div>
+    </mat-sidenav>
+  </mat-sidenav-container>
   <button tuiButton type="button" (click)="closeSideBar()">close sidebar</button>
 </div>
 
@@ -28,9 +78,70 @@
         <div>Выбор размеров страницы</div>
       </div>
       <div class="selecting-screen-sizes">
-        <button (click) =" Change_Size_Web('1366x768')">1366x768</button>
-        <button (click) =" Change_Size_Web('1920x1080')">1920x1080</button>
-        <button (click) =" Change_Size_Web('375x667')">375x667</button>
+        <div id="blog-1">
+          <div class="blog">
+            <div>
+              <img src="https://dummyimage.com/1920x1080" alt="blog">
+              <div>
+                <h2>Категории</h2>
+                <h1>The Catalyzer</h1>
+                <p>Здесь вы можете выбрать размеры своего прототипа</p>
+                <div>
+                  <a href="#">Learn More</a>
+                  <div>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                        <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 9.375a1.875 1.875 0 1 0 0 -3.75 1.875 1.875 0 0 0 0 3.75Z" stroke-width="1"></path>
+                        <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 2.25C3 2.25 0.75 7.5 0.75 7.5S3 12.75 7.5 12.75 14.25 7.5 14.25 7.5 12 2.25 7.5 2.25Z" stroke-width="1"></path>
+                      </svg>
+                      <span>1.2K |</span>
+                    </div>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                        <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M4.386 5.9430000000000005h6.228" stroke-width="1"></path>
+                        <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M4.386 9.057h4.151999999999999" stroke-width="1"></path>
+                        <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.503 0.75a6.7604999999999995 6.7604999999999995 0 0 0 -5.97 3.5925000000000002 6.726 6.726 0 0 0 0.3975 6.9465L0.753 14.25l3.1500000000000004 -1.0619999999999998a6.759 6.759 0 0 0 10.08 -3.8325000000000005 6.723000000000001 6.723000000000001 0 0 0 -1.089 -5.916A6.747 6.747 0 0 0 7.503 0.75v0Z" stroke-width="1"></path>
+                      </svg>
+                      <span>6</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="blog-2">
+          <div class="blog">
+            <div>
+              <img src="https://dummyimage.com/1366x768" alt="blog">
+              <div>
+                <h2>Категории</h2>
+                <h1>The Catalyzer</h1>
+                <p>Здесь вы можете выбрать размеры своего прототипа</p>
+                <div>
+                  <a href="#">Learn More</a>
+                  <div>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                        <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 9.375a1.875 1.875 0 1 0 0 -3.75 1.875 1.875 0 0 0 0 3.75Z" stroke-width="1"></path>
+                        <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 2.25C3 2.25 0.75 7.5 0.75 7.5S3 12.75 7.5 12.75 14.25 7.5 14.25 7.5 12 2.25 7.5 2.25Z" stroke-width="1"></path>
+                      </svg>
+                      <span>1.2K |</span>
+                    </div>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 16 16" height="16" width="16">
+                        <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M4.386 5.9430000000000005h6.228" stroke-width="1"></path>
+                        <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M4.386 9.057h4.151999999999999" stroke-width="1"></path>
+                        <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.503 0.75a6.7604999999999995 6.7604999999999995 0 0 0 -5.97 3.5925000000000002 6.726 6.726 0 0 0 0.3975 6.9465L0.753 14.25l3.1500000000000004 -1.0619999999999998a6.759 6.759 0 0 0 10.08 -3.8325000000000005 6.723000000000001 6.723000000000001 0 0 0 -1.089 -5.916A6.747 6.747 0 0 0 7.503 0.75v0Z" stroke-width="1"></path>
+                      </svg>
+                      <span>6</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class = "podkluch_dannie">
         <button (click)="downloadExcelFile()">Загрузить шаблон</button>
@@ -59,24 +170,66 @@
       <button class="round-button orange" (click)="changeInputColor_dannie('orange')"></button>
       <button class="round-button yellow" (click)="changeInputColor_dannie('yellow')"></button>
       <button class="round-button greenyellow" (click)="changeInputColor_dannie('greenyellow')"></button><nav class="header-nav">
-      <ul>
-        <li><button routerLink="osnov_str" [ngStyle]="{ 'background-color': ChangeColor_dannie }">Основная страница</button></li>
-        <li><button routerLink="help" [ngStyle]="{ 'background-color': ChangeColor_dannie }">Поддержка</button></li>
-        <li><button routerLink="connection" [ngStyle]="{ 'background-color': ChangeColor_dannie }">Связь</button></li>
-        <li><button routerLink="function" [ngStyle]="{ 'background-color': ChangeColor_dannie }">Функционал</button></li>
-      </ul>
     </nav>
     </header>
     <div id="content" [ngStyle]="{'background-color': backgroundColor}">
-      <div>
-        <form>
-          <nav class="znach_button">
-            <input type="text" class="size-name" id="name_maket_dannix" [name]="NameMaket" placeholder="Введите название для макета" [(ngModel)]="NameMaket" [ngClass]="ChangeColor_dannie + '-field'" style="margin-bottom: 5px;" />
-          </nav>
-          <textarea type="text" class="size-opisania" id="text_opisania_dannix" [name]="TextOpisania" placeholder="Введите описание страницы" [(ngModel)]="TextOpisania" [ngClass]="ChangeColor_dannie + '-field'"></textarea>
-        </form>
-        <textarea type="text" class="information" id="contact_dannie_dannix" [name]="ContactDannie" placeholder="Контактные данные" [(ngModel)]="ContactDannie" [ngClass]="ChangeColor_dannie + '-field'"></textarea>
-      </div>
+      <body>
+      <form class="polia_danni">
+        <div class="container" style="display: flex;">
+          <div class="blog-item" style="flex: 1; margin-right: 20px;">
+            <section class="blog-item">
+              <div class="blog-content">
+                <textarea type="text" class="category" id="osnov_category_first" [name]="dannie_info[0]" placeholder="Категории" [(ngModel)]="dannie_info[0]" [ngClass]="ChangeColor_dannie + '-field'"></textarea>
+                <textarea type="text" class="category" id="osnov_category_second" [name]="dannie_info[1]" placeholder="Описание" [(ngModel)]="dannie_info[1]" [ngClass]="ChangeColor_dannie + '-field'"></textarea>
+                <textarea type="text" class="category" id="osnov_category_third" [name]="dannie_info[2]" placeholder="" [(ngModel)]="dannie_info[2]" [ngClass]="ChangeColor_dannie + '-field'"></textarea>
+                <div class="stats">
+                  <div class="likes">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 20 20" stroke="currentColor">
+                      <path d="M11 0H3C1.89543 0 1 0.895431 1 2V12C1 13.1046 1.89543 14 3 14H11L17 20V2C17 0.895431 16.1046 0 15 0H11Z"></path>
+                    </svg>
+                    <span><textarea type="text" class="category" id="osnov_category_thirst" [name]="dannie_info[3]" placeholder="Количество" [(ngModel)]="dannie_info[3]" [ngClass]="ChangeColor_dannie + '-field'"></textarea></span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="blog-item" style="flex: 1;margin-right: 20px;">
+            <section class="blog-item">
+              <div class="blog-content">
+                <textarea type="text" class="category" id="osnov_category_1" [name]="dannie_info[4]" placeholder="Категории" [(ngModel)]="dannie_info[4]" [ngClass]="ChangeColor_dannie + '-field'"></textarea>
+                <textarea type="text" class="category" id="osnov_category_2" [name]="dannie_info[5]" placeholder="Описание" [(ngModel)]="dannie_info[5]" [ngClass]="ChangeColor_dannie + '-field'"></textarea>
+                <textarea type="text" class="category" id="osnov_category_3" [name]="dannie_info[6]" placeholder="" [(ngModel)]="dannie_info[6]" [ngClass]="ChangeColor_dannie + '-field'"></textarea>
+                <div class="stats">
+                  <div class="likes">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 20 20" stroke="currentColor">
+                      <path d="M11 0H3C1.89543 0 1 0.895431 1 2V12C1 13.1046 1.89543 14 3 14H11L17 20V2C17 0.895431 16.1046 0 15 0H11Z"></path>
+                    </svg>
+                    <span><textarea type="text" class="category" id="osnov_category_4" [name]="dannie_info[7]" placeholder="Количество" [(ngModel)]="dannie_info[7]" [ngClass]="ChangeColor_dannie + '-field'"></textarea></span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="blog-item" style="flex: 1;margin-bottom: 10px;">
+            <section class="blog-item">
+              <div class="blog-content">
+                <textarea type="text" class="category" id="osnov_category_5" [name]="dannie_info[8]" placeholder="Категории" [(ngModel)]="dannie_info[8]" [ngClass]="ChangeColor_dannie + '-field'"></textarea>
+                <textarea type="text" class="category" id="osnov_category_6" [name]="dannie_info[9]" placeholder="Описание" [(ngModel)]="dannie_info[9]" [ngClass]="ChangeColor_dannie + '-field'"></textarea>
+                <textarea type="text" class="category" id="osnov_category_7" [name]="dannie_info[10]" placeholder="" [(ngModel)]="dannie_info[10]" [ngClass]="ChangeColor_dannie + '-field'"></textarea>
+                <div class="stats">
+                  <div class="likes">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 20 20" stroke="currentColor">
+                      <path d="M11 0H3C1.89543 0 1 0.895431 1 2V12C1 13.1046 1.89543 14 3 14H11L17 20V2C17 0.895431 16.1046 0 15 0H11Z"></path>
+                    </svg>
+                    <span><textarea type="text" class="category" id="osnov_category_8" [name]="dannie_info[11]" placeholder="Количество" [(ngModel)]="dannie_info[11]" [ngClass]="ChangeColor_dannie + '-field'"></textarea></span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </form>
+      </body>
     </div>
     <script>
       function changeBackgroundColor(color) {
@@ -98,14 +251,54 @@
     </nav>
     </header>
     <div id="content" [ngStyle]="{'background-color': backgroundColor}">
-      <div>
-        <form class="polia_dannix">
-          <textarea type="text" class="size-opisania" id="text_opisania_first" [name]="dannie_info[0]" placeholder="Введите описание страницы" [(ngModel)]="dannie_info[0]" [ngClass]="ChangeColor_geo_location + '-field'"></textarea>
-          <textarea type="text" class="size-opisania" id="text_opisania_second" [name]="dannie_info[1]" placeholder="Введите описание страницы" [(ngModel)]="dannie_info[1]" [ngClass]="ChangeColor_geo_location + '-field'"></textarea>
-          <textarea type="text" class="size-opisania" id="text_opisania_third" [name]="dannie_info[2]" placeholder="Введите описание страницы" [(ngModel)]="dannie_info[2]" [ngClass]="ChangeColor_geo_location + '-field'"></textarea>
-          <textarea type="text" class="size-opisania" id="text_opisania_fourth" [name]="dannie_info[3]" placeholder="Введите описание страницы" [(ngModel)]="dannie_info[3]" [ngClass]="ChangeColor_geo_location + '-field'"></textarea>
-          <textarea type="text" class="size-opisania" id="text_opisania_fifth" [name]="dannie_info[4]" placeholder="Введите описание страницы" [(ngModel)]="dannie_info[4]" [ngClass]="ChangeColor_geo_location + '-field'"></textarea>
-        </form>
+      <div style="font-family: 'body-font', sans-serif; background-color: #f7fafa;" class="container" style="display: flex; flex-direction: row;">
+        <div class="section" style="margin-right: 20px; border: 1px solid black; padding-right: 20px;">
+          <div class="category" >
+            <span class="category">{{ChangeColor_geo_location}}</span>
+            <span class="date">12 Jun 2019</span>
+          </div>
+          <div>
+            <h2>Здесь вы указываете что хотите написать</h2>
+            <textarea type="text" class="size-opisania" id="text_opisania_first" [name]="danni_maket[0]" placeholder="Введите описание страницы" [(ngModel)]="danni_maket[0]" [ngClass]="ChangeColor_geo_location + '-field'"></textarea>
+            <a href="#" style="display: block; margin-top: 10px;">Узнать больше</a>
+            <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="section" style="margin-right: 20px; border: 1px solid black; padding-right: 20px;">
+          <div class="category">
+            <span class="category">{{ChangeColor_geo_location}}</span>
+            <span class="date">12 Jun 2019</span>
+          </div>
+          <div>
+            <h2>Здесь вы указываете что хотите написать</h2>
+            <textarea type="text" class="size-opisania" id="text_opisania_second" [name]="danni_maket[1]" placeholder="Введите описание страницы" [(ngModel)]="danni_maket[1]" [ngClass]="ChangeColor_geo_location + '-field'"></textarea>
+            <a href="#">Узнать больше
+              <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="section" style="margin-right: 20px; border: 1px solid black; padding-right: 20px;">
+          <div class="category">
+            <span class="category">{{ChangeColor_geo_location}}</span>
+            <span class="date">12 Jun 2019</span>
+          </div>
+          <div>
+            <h2>Здесь вы указываете что хотите написать</h2>
+            <textarea type="text" class="size-opisania" id="text_opisania_third" [name]="danni_maket[2]" placeholder="Введите описание страницы" [(ngModel)]="danni_maket[2]" [ngClass]="ChangeColor_geo_location + '-field'"></textarea>
+            <a href="#">Узнать больше
+              <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <script>
@@ -115,32 +308,6 @@
     </script>
   </div>
 </div>
-
-<div id="geo_location">
-  <div class="granish">
-    <header>
-      <button class="round-button red" onclick="changeBackgroundColor('red')"></button>
-      <button class="round-button blue" onclick="changeBackgroundColor('blue')"></button>
-      <button class="round-button green" onclick="changeBackgroundColor('green')"></button>
-      <button class="round-button orange" onclick="changeBackgroundColor('orange')"></button>
-      <button class="round-button yellow" onclick="changeBackgroundColor('yellow')"></button>
-      <button class="round-button greenyellow" onclick="changeBackgroundColor('greenyellow')"></button>
-      <nav class="header-nav"></nav>
-    </header>
-    <div id="content" [ngStyle]="{'background-color': backgroundColor}">
-      <div class="granish">
-        <input type="text" placeholder="Имя">
-        <input type="text" placeholder="Фамилия">
-        <input type="text" placeholder="Адрес">
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeBackgroundColor(color) {
-    document.getElementById('content').style.backgroundColor = color;
-  }
-</script>
 
 <div id="companion">
   <div class ="granish">
@@ -154,36 +321,41 @@
     </nav>
     </header>
     <div id="content" [ngStyle]="{'background-color': backgroundColor}">
-      <div class="polia_dannix">
-        <div class="flex-container">
-          <form class="polia_dannix">
-          </form>
-          <div>
-            <input type="text" class="item-text" id="text_okonchania_first" [name]="zakluchenie[1]" placeholder="1.2K" [(ngModel)]="zakluchenie[1]" [ngClass]="ChangeColor_compation + '-field'">
-            <p class="category-text">Количество пользователей</p>
-          </div>
-
+    </div>
+    <section class="contact-section">
+      <div style="align-items: center">
+        <div class="contact-header">
+          <h1>Связь с нами</h1>
+          <p>Если у вас есть предложения для сотрудничества то укажите ниже</p>
         </div>
-        <div class="flex-container">
-          <div>
-            <input type="text" class="item-text" id="text_okonchania_second" [name]="zakluchenie[2]" placeholder="1.8K" [(ngModel)]="zakluchenie[2]" [ngClass]="ChangeColor_compation + '-field'">
-            <p class="category-text">Подписки</p>
+        <form class="contact-form">
+          <div style="display: flex; flex-direction: row;">
+            <div class="form-group" style="margin-right: 2.5rem">
+              <label for="name">Ваше Имя</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Наша почта</label>
+              <input type="email" id="email" name="email" required>
+            </div>
           </div>
-        </div>
-        <div class="flex-container">
-          <div>
-            <input type="text" class="item-text" id="text_okonchania_third" [name]="zakluchenie[3]" placeholder="2.3K" [(ngModel)]="zakluchenie[3]" [ngClass]="ChangeColor_compation + '-field'">
-            <p class="category-text">Загрузки</p>
+          <div class="form-group">
+            <label>Сообщение</label>
+            <textarea type="text" class="size-opisania" id="text_opisania_78" [name]="contact_dannie[4]" placeholder="Введите ваше предложение" [(ngModel)]="dannie_info[1]" [ngClass]="ChangeColor_geo_location + '-field'"></textarea>
           </div>
-        </div>
-        <div class="flex-container">
-          <div>
-            <input type="text" class="item-text" id="text_okonchania_fourth" [name]="geo_location[1]" placeholder="2.1" [(ngModel)]="geo_location[1]" [ngClass]="ChangeColor_compation + '-field'">
-            <p class="category-text">Предметы</p>
+          <button type="submit">Отправить</button>
+        </form>
+        <div style="display: flex; flex-direction: column;">
+          <div class="form-group" style="margin-right: 2.5rem">
+            <label for="name">Наши контакты:</label><br>
+            <label for="name">{{ contact_dannie[0]}}</label><br>
+            <label for="name">{{ contact_dannie[1]}}</label><br>
+            <label for="name">{{ contact_dannie[2]}}</label><br>
+            <label for="name">{{ contact_dannie[3]}}</label><br>
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <script>
       function changeBackgroundColor(color) {
         document.getElementById('content').style.backgroundColor = color;
